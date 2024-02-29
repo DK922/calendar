@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    background: rgb(75, 53, 122);
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 200px;
+}
+
+.container::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.book__wrapper {
+    margin-bottom: 10px;
+    width: 673px;
+    height: 66px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    backdrop-filter: blur(20px);
+}
+.book__form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+
+}
+.book__elem {
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 auto;
+}
+.book__search-date {
+    position: relative;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff;
+    flex: 1 1 20%;
+    transition: box-shadow 0.3s linear;
+}
+.book__search-date:hover {
+    box-shadow: inset 0px 0px 8px 3px rgba(255, 255, 255, 0.5);
+}
+.book__search-date::after {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 70%;
+    top: 15%;
+    right: 0;
+    background-color: #fff;
+}
+.book__input-block {
+    display: flex;
+    margin-top: 3px;
+    position: relative;
+}
+.book__label {
+    font-size: 12px;
+    font-weight: 400;
+}
+.book__input {
+    max-width: 90px;
+    font-size: 14px;
+    line-height: 18px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0px;
+    margin-top: 3px;
+    color: #fff;
+}
+.book__btn-n {
+    color: #fff;
+    cursor: pointer;
+    padding: 0 5px;
+    transition: box-shadow 0.3s linear;
+}
+.book__btn-n:hover {
+    box-shadow: inset 0px 0px 8px 3px rgba(255, 255, 255, 0.5);
+}
+.book__input-guests {
+    max-width: 20px;
+    text-align: center;
+    margin: 0 20px;
+}
+.book__submit {
+    width: 208px;
+    height: 64.5px;
+    box-shadow: inset 0px 0px 8px 3px rgba(255, 255, 255, 0.5);
+    border-radius: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+    font-size: 17px;
+    transition: background-color 0.3s linear, color 0.3s linear;
+}
+.book__submit:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+
+.calendar {
+    position: relative;
+    width: 673px;
+    min-height: 380px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    backdrop-filter: blur(20px);
+    color: #fff;
+    padding: 25px;
+}
+.calendar__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.next, .prev {
+    position: absolute;
+    top: 38px;
+}
+.prev {
+    transform: rotate(180deg);
+    left: 50px;
+}
+.next {
+    right: 50px;
+}
+.calendar__btns {
+    display: flex;
+    justify-content: flex-end;
+}
+.calendar__half {
+    flex: 0 0 50%;
+}
+.calendar__header {
+    width: 100%;
+    min-height: 20px;
+    margin: 20px 0;   
+}
+.date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+.date__month, .date__year, .date__month-d, .date__year-d {
+    padding: 0 5px;
+}
+
+.days div {
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center;
+    width: calc(280px / 7);
+    transition: box-shadow 0.2s linear;
+}
+
+.days .available {
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+
+.days .unavailable {
+    background-color: red;
+    color: white;
+    cursor: not-allowed;
+}
+
+._no-active {
+    opacity: 0.5;
+    pointer-events: none;
+}
+.calendar__table {
+    padding: 16px;
+    min-height: 312px;
+}
+.weekdays {
+    display: flex;
+    align-items: center;
+}
+.weekdays div{
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center;   
+    width: calc(280px / 7);
+}
+.days, .days-d {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+    transition: box-shadow 0.2s linear;
+}
+.days div,.days-d div{
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center;
+    width: calc(280px / 7);
+    transition: box-shadow 0.2s linear;
+}
+
+.hide-calendar {
+    width: 67px;
+    height: 32px;
+    box-shadow: inset 0px 0px 8px 3px rgba(255, 255, 255, 0.5);
+    border-radius: 2px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    transition: background-color 0.3s linear, color 0.3s linear;
+}
+.hide-calendar:hover {
+    background-color: #fff;
+    color: #000;
+}
+.reset-form {
+    margin-right: 20px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: underline;
+    transition: opacity 0.3s linear;
+}
+
+
+.today{
+    font-weight: 600;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.days div:hover {
+    border-radius: 3px;
+    box-shadow: inset 0px 0px 8px 2px rgba(255, 255, 255, 0.3);
+}
+.days-d div:hover {
+    border-radius: 3px;
+    box-shadow: inset 0px 0px 8px 2px rgba(255, 255, 255, 0.3);
+}
+
+.reset-form:hover {
+    opacity: 0.6;
+}
+
+._no-active {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+._checked, ._checked-up {
+    background-color: #fff;
+    color: #000;
+}
